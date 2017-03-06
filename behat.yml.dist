@@ -1,0 +1,14 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            sessions:
+                javascript_driver:
+                     selenium2:
+                        wd_host: "http://127.0.0.1:4444/wd/hub"
+                 browserkit_driver:
+                     symfony2: ~
+            default_session: browserkit_driver
+            browser_name: 'phantomjs'
+            base_url: "http://127.0.0.1:8000/app_dev.php"
+
