@@ -10,11 +10,17 @@ Ajouter les lignes suvantes au kernel :
 
 Ajouter au composer.json :
 
-    {
-        "require-dev": {
-            "sedona/test-bundle": "dev-master"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@git.sedona.fr:php/test-bundle.git"
         }
-    }
+    ]
+Exécuter
+
+    composer require sedona/test-bundle --dev
+    ou
+    php -d memory_limit=-1 composer.phar require sedona/test-bundle --dev
     
 Copier les fichiers suivant à la racine de votre projet :
 - test.sh
