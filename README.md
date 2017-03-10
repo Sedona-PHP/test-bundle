@@ -5,8 +5,7 @@ Initialisation
 ---------------
 Ajouter les lignes suvantes au kernel :
 
-    new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-    new \Sedona\SedonaTestBundle()
+    new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle()
 
 Ajouter au composer.json :
 
