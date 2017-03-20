@@ -1,12 +1,12 @@
 default:
     extensions:
-        Behat\Symfony2Extension: ~
         Behat\MinkExtension:
+            base_url: http://localhost:8000
             sessions:
+                default:
+                    goutte: ~
                 browserkit_driver:
-                    symfony2: ~
-                javascript_driver:
-                     selenium2: ~
+                    selenium2: ~
             default_session: browserkit_driver
             javascript_session: javascript_driver
             browser_name: firefox

@@ -12,15 +12,15 @@ start=`date +%s`
 resultPhpUnit=0
 resultBehat=0
 
-echo "run server symfony"
-php app/console server:start --force 127.0.0.1:8000 &
+echo "run server"
+exec php -S 127.0.0.1:8000 >logs/php-server.log 2>logs/php-server.error.log & export PID=$!
 
 echo -e "--------------------------";
 echo -e " load  fixtures";
 php app/console doctrine:fixtures:load --append --fixtures=tests/LookBookBundle/DataFixtures/ORM
 
 echo -e "--------------------------";
-    if [[ "$1" == "--phpunit" ]]||[[ $# -eq 0 ]] ; then
+if [[ "$1" == "--phpunit" ]]||[[ $# -eq 0 ]] ; then
     bin/phpunit -c .
     resultPhpUnit=${PIPESTATUS[0]}
 else
@@ -46,8 +46,8 @@ end=`date +%s`
 diff=`expr $end - $start`
 echo -e "Elapsed time = $diff seconds"
 
-echo "stop symfony server"
-php app/console server:stop 127.0.0.1:8000
+echo "stop server ($PID)"
+exec kill -9 $PID
 
 if [[ "$resultPhpUnit" == 1 ]]||[[ "$resultBehat" == 1 ]] ; then
     echo -e "Ko";
