@@ -47,7 +47,7 @@ diff=`expr $end - $start`
 echo -e "Elapsed time = $diff seconds"
 
 echo "stop server ($PID)"
-exec kill -9 $PID
+#exec kill -9 $PID
 
 if [[ "$resultPhpUnit" == 1 ]]||[[ "$resultBehat" == 1 ]] ; then
     echo -e "Ko";
