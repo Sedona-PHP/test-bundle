@@ -13,11 +13,11 @@ resultPhpUnit=0
 resultBehat=0
 
 echo "run server symfony"
-php app/console server:start --force 127.0.0.1:8000 &
+php bin/console server:start --force 127.0.0.1:8000 &
 
 echo -e "--------------------------";
 echo -e " load  fixtures";
-php app/console doctrine:fixtures:load --append --fixtures=tests/LookBookBundle/DataFixtures/ORM
+php bin/console doctrine:fixtures:load --append --fixtures=tests/LookBookBundle/DataFixtures/ORM
 
 echo -e "--------------------------";
     if [[ "$1" == "--phpunit" ]]||[[ $# -eq 0 ]] ; then
@@ -47,7 +47,7 @@ diff=`expr $end - $start`
 echo -e "Elapsed time = $diff seconds"
 
 echo "stop symfony server"
-php app/console server:stop 127.0.0.1:8000
+php bin/console server:stop 127.0.0.1:8000
 
 if [[ "$resultPhpUnit" == 1 ]]||[[ "$resultBehat" == 1 ]] ; then
     echo -e "Ko";
