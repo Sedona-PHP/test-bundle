@@ -14,7 +14,7 @@
     }
   },
   "require": {
-    "symfony/symfony": "~3.*",
+    "symfony/symfony": "3.*",
     "behat/behat": "^3.1",
     "behat/mink-extension": "^2.2",
     "behat/symfony2-extension": "^2.1",
