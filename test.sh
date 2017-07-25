@@ -17,7 +17,7 @@ php bin/console server:start --force 127.0.0.1:8000 &
 
 echo -e "--------------------------";
 echo -e " load  fixtures";
-php bin/console doctrine:fixtures:load --append --fixtures=tests/LookBookBundle/DataFixtures/ORM
+php bin/console doctrine:fixtures:load --append --fixtures=tests/AppBundle/DataFixtures/ORM
 
 echo -e "--------------------------";
     if [[ "$1" == "--phpunit" ]]||[[ $# -eq 0 ]] ; then
