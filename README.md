@@ -12,7 +12,7 @@ Ajouter au composer.json :
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@git.sedona.fr:php/test-bundle.git"
+            "url": "git@github.com:Sedona-PHP/test-bundle.git"
         }
     ]
 Exécuter
